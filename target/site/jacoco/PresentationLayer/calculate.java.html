@@ -10,25 +10,27 @@ import javax.servlet.http.HttpServletResponse;
  */
 <span class="nc" id="L11">public class calculate extends Command {</span>
 
-    public void calculater(int height, int width, int length)
+    public int calculator(int height, int width, int length)
     {
-<span class="nc" id="L15">        house house1 = new house(height,width,length);</span>
+      
 <span class="nc" id="L16">       int bricks = ((length*2)+((width-4)*2))*height;</span>
-<span class="nc" id="L17">        house1.setTotalBricks(bricks);</span>
-       // return house1.getTotalBricks();
-<span class="nc" id="L19">    }</span>
+<span class="nc" id="L17">       return bricks;</span>
+    }
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException
     {
-<span class="nc" id="L24">        int height = Integer.parseInt(request.getParameter(&quot;Height&quot;));</span>
-<span class="nc" id="L25">        int width = Integer.parseInt(request.getParameter(&quot;Width&quot;));</span>
-<span class="nc" id="L26">        int length = Integer.parseInt(request.getParameter(&quot;Length&quot;));</span>
+<span class="nc" id="L23">        calculate calc= new calculate();</span>
         
-<span class="nc" id="L28">        house house2 = new house(height,width,length);</span>
+<span class="nc" id="L25">        int height = Integer.parseInt(request.getParameter(&quot;Height&quot;));</span>
+<span class="nc" id="L26">        int width = Integer.parseInt(request.getParameter(&quot;Width&quot;));</span>
+<span class="nc" id="L27">        int length = Integer.parseInt(request.getParameter(&quot;Length&quot;));</span>
         
-<span class="nc" id="L30">        request.setAttribute(&quot;house&quot;, house2.getTotalBricks());</span>
-<span class="nc" id="L31">        return &quot;placeOrder&quot;;</span>
+<span class="nc" id="L29">        int bricks = calc.calculator(height, width, length);</span>
+<span class="nc" id="L30">        house house2 = new house(height,width,length,bricks);</span>
+        
+<span class="nc" id="L32">        request.setAttribute(&quot;house&quot;, house2);</span>
+<span class="nc" id="L33">        return &quot;placeOrder&quot;;</span>
     }
 
 }

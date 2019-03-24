@@ -16,5 +16,6 @@
         <h1>This is your house</h1>
         <% house house = (house)request.getAttribute("house"); %>
         <p><%=house.getTotalBricks()%></p>
+        <h1>Previous order brick total was: <%= request.getParameter("orderID")%> </h1>
     </body>
 </html>

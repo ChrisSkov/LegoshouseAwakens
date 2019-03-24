@@ -6,11 +6,12 @@ public class house {
 
     private int height,width,length,totalBricks;
 
-    public house(int height, int width, int length)
+    public house(int height, int width, int length, int totalBricks)
     {
         this.height = height;
         this.width = width;
         this.length = length;
+        this.totalBricks = totalBricks;
     }
 
     public int getHeight()

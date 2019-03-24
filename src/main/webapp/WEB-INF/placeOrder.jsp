@@ -15,6 +15,6 @@
     <body>
         <h1>This is your house</h1>
         <% house house = (house)request.getAttribute("house"); %>
-        <p><%=house.getHeight()%></p>
+        <p><%=house.getTotalBricks()%></p>
     </body>
 </html>

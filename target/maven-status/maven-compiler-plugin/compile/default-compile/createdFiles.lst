@@ -1,3 +1,5 @@
+PresentationLayer\calculate.class
+FunctionLayer\house.class
 PresentationLayer\UnknownCommand.class
 DBAccess\Connector.class
 FunctionLayer\User.class

@@ -5,10 +5,21 @@
  */
 package DBAccess;
 
+import com.mysql.cj.x.protobuf.MysqlxCrud.Order;
+import java.util.ArrayList;
+
 /**
  *
  * @author stoff
  */
-public class OrderMapper {
+
+public interface OrderMapper
+{
+    public void saveOrder(Order order);
     
+    public Order getOrder(int id);
+    
+    public Order getOrderWithDetails(int id);
+    
+    public ArrayList<Order> getAllOrdersByUserID(int id);
 }

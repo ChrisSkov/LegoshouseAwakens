@@ -25,9 +25,10 @@ public class calculate extends Command {
         int height = Integer.parseInt(request.getParameter("Height"));
         int width = Integer.parseInt(request.getParameter("Width"));
         int length = Integer.parseInt(request.getParameter("Length"));
+        int userID = Integer.parseInt(request.getParameter("userID"));
         
         int bricks = calc.calculator(height, width, length);
-        house house2 = new house(height,width,length,bricks);
+        house house2 = new house(height,width,length,bricks, userID);
         
         request.setAttribute("house", house2);
         return "placeOrder";

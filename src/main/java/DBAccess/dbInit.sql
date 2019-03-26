@@ -25,9 +25,13 @@ DROP TABLE IF EXISTS 'previousorders';
 CREATE TABLE 'previousorders';
 (
 'orderID'      int(11) NOT NULL AUTO_INCREMENT,
+'height'       int(11) NOT NULL,
+'width'        int(11) NOT NULL,
+'length'       int(11) NOT NULL,
 'totalBricks'  int(11) NOT NULL,
 PRIMARIY KEY ('orderID'),
 UNIQUE KEY 'orderID_UNIQUE' ('orderID')
 )ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+
 
 
